@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Ajax</title>
+	<script type="text/javascript" src="cal.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="Ajaxform.js"></script>
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+<body>
+	<div id="formAjax">
+		<form action="" method="post">
+			<table>
+				<tr class="row">
+					<td class="info">Username</td>
+					<td><input type="text" name="username" id="username" onchange="checkUserName();"></td>
+					<td class="error" id="error_user"></td>
+				</tr>
+				<tr  class="row">
+					<td class="info">Password</td>
+					<td><input type="password" name="password" id="password" onchange="checkPassword();"></td>
+					<td class="error" id="error_pass"></td>
+				</tr>
+				<tr class="row">
+					<td class="info">Email</td>
+					<td><input type="input" name="email" id="email" onchange="checkEmail()"></td>
+					<td class="error" id="error_email"></td>
+				</tr>
+			</table>
+			<table>
+				<tr class="row">
+					<td class="info">Birthday</td>
+					<td>
+							<input type="text" id="birthday" name="birthday" disabled="">
+							<img src="calendar.png" alt="calendar.png" onclick="openCalendar();" onchange="checkBirthday();">
+						<script type="text/javascript">
+							createClendar();
+						</script>					
+					</td>
+					<td class="error" id="error_birthday"></td>
+				</tr>
+				<tr class="row">
+					<td></td>
+					<td class="btn">
+					<button class="button" type="button" id="submit" name="submit" onclick="Submit('ajax.php');">Submit</button>
+					<button class="button"  type="button" onclick="Reset();">Reset</button></td>
+					<td></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>
